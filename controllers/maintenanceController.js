@@ -1,7 +1,4 @@
 const Maintenance = require('../models/Maintenance');
-const Workshop = require('../models/Workshop');
-const Vehicle = require('../models/Vehicle');
-
 
 exports.createMaintenance = async (req, res) => {
     try {

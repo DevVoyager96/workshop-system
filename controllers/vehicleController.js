@@ -25,7 +25,6 @@ exports.getVehicleById = async (req, res) => {
         const vehicle = await Vehicle.findById(req.params.id).lean();
         if (!vehicle) return res.status(404).json({ message: 'Veículo não encontrado' });
 
-        // Buscar manutenções do veículo
         const maintenances = await Maintenance.find({ vehicle: req.params.id });
         vehicle.maintenances = maintenances;
 

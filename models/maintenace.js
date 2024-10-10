@@ -9,7 +9,6 @@ const maintenanceSchema = new Schema({
     totalCost: { type: Number, default: 0 }
 });
 
-// Pre-save hook to calculate total cost
 maintenanceSchema.pre('save', function (next) {
     this.totalCost = this.services.reduce((total, service) => total + service.price, 0);
     next();

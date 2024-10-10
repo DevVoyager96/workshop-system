@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const workshopController = require('../controllers/workshopController');
 
-router.post('/', workshopController.createWorkshop);       // Criar Oficina
-router.get('/', workshopController.getWorkshops);          // Listar Oficinas
-router.get('/:id', workshopController.getWorkshopById);    // Listar Oficina por ID
-router.put('/:id', workshopController.updateWorkshop);     // Atualizar Oficina
-router.delete('/:id', workshopController.deleteWorkshop);  // Deletar Oficina
+router.post('/', workshopController.createWorkshop);       
+router.get('/', workshopController.getWorkshops);          
+router.get('/:id', workshopController.getWorkshopById);    
+router.put('/:id', workshopController.updateWorkshop);     
+router.delete('/:id', workshopController.deleteWorkshop);  
 
 module.exports = router;

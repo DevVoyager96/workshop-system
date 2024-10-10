@@ -1,16 +1,10 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-const connectDB = async () => {
-    try {
-        await mongoose.connect('mongodb://localhost:27017/workshopDB', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        console.log('MongoDB connected...');
-    } catch (err) {
-        console.error(err.message);
-        process.exit(1);
-    }
-};
-
-module.exports = connectDB;
+(async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB);
+    console.log("Connected with DB");
+  } catch (error) {
+    console.log(error);
+  }
+})();
